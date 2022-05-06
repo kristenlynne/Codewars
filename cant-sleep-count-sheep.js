@@ -5,8 +5,8 @@
 
 var countSheep = function (num){
     let str = "";
-  for(let i = 1; i <= num; i++) { str+= `${i} sheep...`; }
-  return str;
+    for(let i = 1; i <= num; i++) { str+= `${i} sheep...`; }
+    return str;
 }
 
 console.log(countSheep(5)); // 1 sheep...2 sheep...3 sheep...4 sheep...5 sheep...
