@@ -10,4 +10,4 @@ function createArray(number){
     return newArray;
   }
 
-// added counter++
+// added counter
