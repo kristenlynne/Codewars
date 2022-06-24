@@ -10,12 +10,6 @@
 // There will always be at least one number in the input string.
 // Output string must be two numbers separated by a single space, and highest number is first.
 
-// PREP
-// P: string of numbers
-// R: the highest and lowest number in a string. return the highest number first.
-// E: ("-5, -4, 3, 4, 6"); // return "-5 1"
-// P: string of numbers and need to return the high and lowest number in the string. 
-
 function highAndLow(numbers){
     let sortedArr = numbers.split(' ').sort((a, b) => a - b)
     let min = sortedArr[0]
