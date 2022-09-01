@@ -20,6 +20,29 @@ function spinWords(str){
     return result;
 }
 
+// for loop solution
+
+function spinWords(str) {
+    let strArr = str.split(' ');
+    for (let i = 0; i < strArr.length; i++) {
+      if (strArr[i].length >= 5)
+        strArr[i] = strArr[i].split('').reverse().join('');
+    }
+    return strArr.join(' ');
+}
+
+// forEach solution
+
+function spinWords(str){
+    wordsArray = str.split(' ');
+    wordsArray.forEach(function(word, index){
+      if (word.length > 4) {
+        wordsArray[index] = word.split('').reverse().join('');
+      }
+    });
+    return wordsArray.join(' ');
+  }
+
 console.log(spinWords('Hey fellow warriors')); // 'Hey wollef sroirraw'
 console.log(spinWords('you spin me right round baby right round')); // 'you spin me thgir dnuor baby thgir dnuor'
 console.log(spinWords('ghost')); // 'tsohg'
