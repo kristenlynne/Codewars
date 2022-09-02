@@ -10,6 +10,7 @@
 
 function alphabetPosition(text) {
     const upperText = text.toUpperCase();
+
     const arr = upperText.split('').map(let => let.charCodeAt());
 
     const newArr = arr.filter(num => {
@@ -18,9 +19,10 @@ function alphabetPosition(text) {
       }
     })
 
-    const updatedNumsArr = newArr.map(num => num - 64)
+    const updatedNumsArr = newArr.map(num => num - 64);
     
-    return updatedNumsArr.join(' ')
+    return updatedNumsArr.join(' ');
   }
-
-console.log(alphabetPosition('hello')); // '8 5 12 12 15'
+  
+  console.log(alphabetPosition('hello')); // '8 5 12 12 15'
+  console.log(alphabetPosition('hello world.')) // '8 5 12 12 15 23 15 18 12 4'
