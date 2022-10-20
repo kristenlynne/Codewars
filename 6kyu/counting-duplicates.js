@@ -9,6 +9,7 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
+// method soluton O(n^2) time complexity so not an optimal solution
 function duplicateCount(text){
   return text.toLowerCase().split('').filter((val, i, arr) => {
     return arr.indexOf(val) !== i && arr.lastIndexOf(val) === i;
@@ -20,3 +21,26 @@ console.log(duplicateCount('abcde'), 0);
 console.log(duplicateCount('aABbc'), 2);
 console.log(duplicateCount('Indivisibility'), 1);
 console.log(duplicateCount('indivisibilities'), 2);
+
+// for loop solution from codewars
+const duplicateCount = (string) => {
+    
+  // makes an array all lowercase and sorts the array in alpha order for easy comparrison
+  let newString = string.toLowerCase().split('').sort();
+  
+  // this array will house the duplicated values so we can 
+  // get the length of it (or the number of duplicated characters). 
+  let newArray = []
+  
+  // set a loop for the array
+  for(i = 0; i < newString.length; i++){
+     // if the current element equals the following element the push it to the new array AND
+     // ONLY if the new array doesn't already include the current element
+     if(newString[i] === newString[i + 1] && !newArray.includes(newString[i])){
+         // push elements to new array
+         newArray.push(newString[i])
+     }
+  }
+  // return the number of elements in the array to represent the number characters that were duplicated
+  return newArray.length
+}
