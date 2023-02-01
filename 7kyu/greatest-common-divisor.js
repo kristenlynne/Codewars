@@ -11,5 +11,18 @@ function mygcd(x,y){
   }
 }
 
+// recursive solution
+function mygcd(a, b){
+  if (b === 0) {
+    return a;
+  }
+  return mygcd(b, a % b);
+};
+
 console.log(mygcd(30,12), 6)
 console.log(mygcd(60,48), 12)
+
+// base case is set so that if b = 0, return a. b is when there is no longer a remainder.
+// when the recursion first runs mygcd(12, 30 % 12) == mygcd(12, 6)
+// when it runs again mygcd(6, 12 % 6) == mygcd(6, 0) b === 0 so it returns 6 since this meets the base case
+// euclidean algorithm
